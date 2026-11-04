@@ -131,6 +131,16 @@ type Stats struct {
 	Max   float64 `json:"max"`
 	Count int64   `json:"count"`
 }
+
+// statsFromAggregate computes a count-weighted mean from the persisted sum and
+// count. An empty bucket has no statistic, rather than a misleading zero.
+func statsFromAggregate(sum, min, max float64, count int64) *Stats {
+	if count <= 0 {
+		return nil
+	}
+	return &Stats{Avg: sum / float64(count), Min: min, Max: max, Count: count}
+}
+
 type QueryResult struct {
 	DeviceID      string  `json:"device_id"`
 	Resolution    string  `json:"resolution"`
@@ -192,7 +202,7 @@ func (s *Store) Query(ctx context.Context, id string, metrics []string, from, to
 		}
 		found[epoch] = map[string]*Stats{}
 		for i, m := range metrics {
-			found[epoch][m] = &Stats{Avg: sums[i] / float64(counts[i]), Min: mins[i], Max: maxs[i], Count: counts[i]}
+			found[epoch][m] = statsFromAggregate(sums[i], mins[i], maxs[i], counts[i])
 		}
 	}
 	if err = rows.Err(); err != nil {

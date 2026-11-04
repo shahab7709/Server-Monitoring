@@ -82,15 +82,7 @@ services:
       worker: {condition: service_started}
   smoke:
     profiles: ["test"]
-    build: 
-      context: .
-      dockerfile: Dockerfile
-      network: host
-      args:
-        TARGET: smoke
-        HTTP_PROXY: socks5h://127.0.0.1:12334
-        HTTPS_PROXY: socks5h://127.0.0.1:12334
-        ALL_PROXY: socks5h://127.0.0.1:12334       
+    build: {context: ., args: {TARGET: smoke}}
     environment: {API_URL: "http://api:8080"}
     depends_on:
       api: {condition: service_healthy}
