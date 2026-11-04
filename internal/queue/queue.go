@@ -19,7 +19,7 @@ func Connect(url string) (*nats.Conn, nats.JetStreamContext, error) {
 		nc.Close()
 		return nil, nil, err
 	}
-	_, err = js.AddStream(&nats.StreamConfig{Name: Stream, Subjects: []string{Subject}, Storage: nats.FileStorage, Retention: nats.LimitsPolicy, MaxAge: 48 * time.Hour, MaxBytes: 2 * 1024 * 1024 * 1024, Discard: nats.DiscardNew, Replicas: 1, DuplicateWindow: 2 * time.Minute})
+	_, err = js.AddStream(&nats.StreamConfig{Name: Stream, Subjects: []string{Subject}, Storage: nats.FileStorage, Retention: nats.LimitsPolicy, MaxAge: 48 * time.Hour, MaxBytes: 2 * 1024 * 1024 * 1024, Discard: nats.DiscardNew, Replicas: 1, Duplicates: 2 * time.Minute})
 	if err != nil {
 		if _, e := js.StreamInfo(Stream); e != nil {
 			nc.Close()
