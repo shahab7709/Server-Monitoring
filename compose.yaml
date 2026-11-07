@@ -21,8 +21,9 @@ services:
     volumes:
       - natsdata:/data
     healthcheck:
-      test: ["CMD", "/nats-server", "--help"]
-      interval: 10s
+      test: [CMD, wget, -T, '3', -qO-, 'http://127.0.0.1:8222/healthz']
+      interval: 5s
+      retries: 10
   api:
     restart: unless-stopped
     # build: {context: ., args: {TARGET: api}}

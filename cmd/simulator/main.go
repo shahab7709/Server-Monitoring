@@ -9,7 +9,9 @@ import (
 	"math"
 	"net/http"
 	"os"
+	"os/signal"
 	"strconv"
+	"syscall"
 	"time"
 )
 
@@ -54,32 +56,47 @@ func main() {
 	days := integer("HISTORY_DAYS", 3)
 	seed := int64(integer("SEED", 42))
 	api := env("API_URL", "http://localhost:8080")
-	if count < 1 || days < 0 {
-		log.Fatal("invalid device count/history")
+	prefix := env("DEVICE_PREFIX", "server-")
+	maxAttempts := integer("MAX_PUBLISH_ATTEMPTS", 5)
+	var generated, accepted, failures, retries int64
+	if count < 1 || days < 0 || maxAttempts < 1 {
+		log.Fatal("invalid device count/history/publish attempts")
 	}
 	client := &http.Client{Timeout: 15 * time.Second}
 	send := func(batch []model.Sample) {
+		generated += int64(len(batch))
 		payload, _ := json.Marshal(model.Batch{Samples: batch})
-		for attempts := 0; ; attempts++ {
+		for attempts := 0; attempts < maxAttempts; attempts++ {
 			resp, err := client.Post(api+"/api/v1/metrics/batch", "application/json", bytes.NewReader(payload))
 			if err == nil {
 				resp.Body.Close()
 				if resp.StatusCode == 202 {
+					accepted += int64(len(batch))
 					return
 				}
 				err = fmt.Errorf("status %d", resp.StatusCode)
 			}
+			retries++
 			if attempts%10 == 0 {
 				log.Printf("retrying (%v)", err)
 			}
-			time.Sleep(time.Duration(1+attempts%5) * time.Second)
+			if attempts+1 < maxAttempts {
+				time.Sleep(time.Duration(1+attempts%5) * time.Second)
+			}
 		}
+		failures += int64(len(batch))
+		log.Printf("publication exhausted: %d samples failed after %d attempts", len(batch), maxAttempts)
+	}
+	makeSample := func(d int, t time.Time) model.Sample {
+		s := sample(d, t, seed)
+		s.DeviceID = fmt.Sprintf("%s%05d", prefix, d)
+		return s
 	}
 	start := time.Now().UTC().Truncate(time.Second)
 	batch := make([]model.Sample, 0, 400)
 	for t := start.Add(-time.Duration(days) * 24 * time.Hour); t.Before(start); t = t.Add(time.Second) {
 		for d := 0; d < count; d++ {
-			batch = append(batch, sample(d, t, seed))
+			batch = append(batch, makeSample(d, t))
 			if len(batch) >= 400 {
 				send(batch)
 				batch = batch[:0]
@@ -92,11 +109,26 @@ func main() {
 	log.Printf("backfill queued %d devices, %d days", count, days)
 	tick := time.NewTicker(time.Second)
 	defer tick.Stop()
-	for t := range tick.C {
+	previousTick := time.Now().UTC().Truncate(time.Second)
+	var missedTicks int64
+	shutdown := make(chan os.Signal, 1)
+	signal.Notify(shutdown, syscall.SIGTERM, os.Interrupt)
+	defer signal.Stop(shutdown)
+	for {
+		var t time.Time
+		select {
+		case <-shutdown:
+			return
+		case t = <-tick.C:
+		}
 		t = t.UTC().Truncate(time.Second)
+		if gap := int64(t.Sub(previousTick) / time.Second); gap > 1 {
+			missedTicks += gap - 1
+		}
+		previousTick = t
 		batch = batch[:0]
 		for d := 0; d < count; d++ {
-			batch = append(batch, sample(d, t, seed))
+			batch = append(batch, makeSample(d, t))
 			if len(batch) >= 400 {
 				send(batch)
 				batch = batch[:0]
@@ -105,5 +137,6 @@ func main() {
 		if len(batch) > 0 {
 			send(batch)
 		}
+		log.Printf(`BENCH {"generated":%d,"accepted":%d,"failed":%d,"retries":%d,"missed_ticks":%d,"tick_lag_seconds":%.3f,"observed_at":%.9f}`, generated, accepted, failures, retries, missedTicks, time.Since(t).Seconds(), float64(time.Now().UnixNano())/1e9)
 	}
 }

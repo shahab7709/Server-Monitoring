@@ -1,0 +1,10 @@
+{
+  "devices": "50",
+  "seconds": 35,
+  "warmup": 10,
+  "sample_seconds": 5,
+  "api": "http://127.0.0.1:28081",
+  "simulator": "/tmp/server-monitoring-simulator",
+  "out": "loadtest/results/preflight-20261104",
+  "skip_history": false
+}

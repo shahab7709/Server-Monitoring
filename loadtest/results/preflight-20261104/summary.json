@@ -1,0 +1,57 @@
+[
+  {
+    "label": "00-50",
+    "devices": 50,
+    "offered": 50,
+    "warmup": 10,
+    "seconds": 35,
+    "drain_before_seconds": 0.08698512999762897,
+    "stop_reason": null,
+    "collection_errors": [],
+    "browser_exit": 0,
+    "query": {
+      "1h": {
+        "p50": 5.534875999728683,
+        "p95": 12.930275999678997,
+        "p99": 323.03808000142453,
+        "requests": 83,
+        "errors": 0
+      },
+      "7d": {
+        "p50": 8.835229000396794,
+        "p95": 36.31464299905929,
+        "p99": 79.19415799915441,
+        "requests": 80,
+        "errors": 0
+      },
+      "365d": {
+        "p50": 68.79687000036938,
+        "p95": 150.98639099960565,
+        "p99": 197.5070720000076,
+        "requests": 80,
+        "errors": 0
+      }
+    },
+    "status": "INCONCLUSIVE",
+    "browser_p95": 148.70000000298023,
+    "browser_errors": 0,
+    "browser_requests": 227,
+    "measured_seconds": 20.074154376983643,
+    "accepted_rate": 49.815298877374715,
+    "committed_rate": 49.815298877374715,
+    "queue_slope": 0.0,
+    "latest_sample_age_p95": 2.786156177520752,
+    "generator_lag_p95": 0.035,
+    "failures": [],
+    "missing": [
+      "Less than 15 minutes measured",
+      "Per-sample generation-to-visibility p95 and complete resource health verification unavailable"
+    ],
+    "drain_after_seconds": 0.10099222200005897,
+    "final_committed": 1750,
+    "final_device_coverage": 50,
+    "final_accepted": 1750,
+    "final_failed": 0,
+    "acceptance_counter_limitation": "Counters are emitted after each completed tick; termination can leave an unlogged partial tick."
+  }
+]

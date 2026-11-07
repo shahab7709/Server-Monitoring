@@ -1,0 +1,14 @@
+2|Error Log Retention Policy [2]|1 mon|policy_job_error_retention|{"drop_after": "1 month"}
+3|Job History Log Retention Policy [3]|1 mon|policy_job_stat_history_retention|{"drop_after": "1 month"}
+1|Telemetry Reporter [1]|24:00:00|policy_telemetry|
+1000|Retention Policy [1000]|1 day|policy_retention|{"drop_after": "7 days", "hypertable_id": 1}
+1001|Retention Policy [1001]|1 day|policy_retention|{"drop_after": "45 days", "hypertable_id": 2}
+1002|Retention Policy [1002]|1 day|policy_retention|{"drop_after": "400 days", "hypertable_id": 3}
+2.17.2
+16.6
+100389347
+1002|Success|2026-11-04 11:58:27.768741+00|2026-11-05 11:58:27.768741+00
+1001|Success|2026-11-04 11:58:27.766235+00|2026-11-05 11:58:27.766235+00
+1000|Success|2026-11-04 11:58:27.759609+00|2026-11-05 11:58:27.759609+00
+3|Success|2026-11-04 11:52:11.725404+00|2026-12-01 00:00:00+00
+1|Failed|-infinity|2026-11-04 12:52:11.711527+00

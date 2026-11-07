@@ -1,0 +1,59 @@
+{
+  "label": "00-2000",
+  "devices": 2000,
+  "offered": 2000,
+  "warmup": 120,
+  "seconds": 1030,
+  "drain_before_seconds": 0.07222451800043928,
+  "stop_reason": null,
+  "collection_errors": [],
+  "browser_exit": 0,
+  "generator_exit": 0,
+  "query": {
+    "1h": {
+      "p50": 15.860388000874082,
+      "p95": 38.655531003314536,
+      "p99": 76.73083000190672,
+      "requests": 2899,
+      "errors": 0
+    },
+    "7d": {
+      "p50": 13.128252998285461,
+      "p95": 30.713283002114622,
+      "p99": 53.43526800061227,
+      "requests": 2900,
+      "errors": 0
+    },
+    "365d": {
+      "p50": 92.81599300084054,
+      "p95": 160.68568300033803,
+      "p99": 238.1676900004095,
+      "requests": 2899,
+      "errors": 0
+    }
+  },
+  "status": "PASS",
+  "browser_p95": 245,
+  "browser_errors": 0,
+  "browser_requests": 7789,
+  "visibility_lag_p95_upper_bound": 8.558529376983643,
+  "visibility_probe_count": 905,
+  "measured_seconds": 905.6261761188507,
+  "accepted_rate": 2000.0349681433327,
+  "committed_rate": 1997.2998244536277,
+  "queue_slope": -0.0010057566850103184,
+  "queue_start_median": 2.0,
+  "queue_end_median": 0.0,
+  "latest_sample_age_p95": 3.8267767429351807,
+  "generator_lag_p95": 0.605,
+  "visibility_probe_method": "Last device in each generated tick, timestamp-to-chart-API visibility, polled every five seconds; conservative upper bound including polling delay.",
+  "failures": [],
+  "missing": [],
+  "drain_after_seconds": 0.08730473000105121,
+  "final_committed": 2060000,
+  "final_device_coverage": 2000,
+  "final_accepted": 2060000,
+  "final_failed": 0,
+  "ingestion_error_rate": 0.0,
+  "acceptance_counter_limitation": "Counters are emitted after each completed tick; termination can leave an unlogged partial tick."
+}

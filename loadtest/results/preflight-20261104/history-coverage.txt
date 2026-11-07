@@ -1,0 +1,2 @@
+8761|8761|2025-11-04 12:00:00+00|2026-11-04 12:00:00+00|365.0000000000000000
+Cadence: one actual sample/hour; all seven sensors; ingested through API and worker. Not a full 1 Hz annual dataset.

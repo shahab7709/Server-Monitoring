@@ -1,0 +1,60 @@
+{
+  "label": "02-250",
+  "devices": 250,
+  "offered": 250,
+  "warmup": 120,
+  "seconds": 300,
+  "drain_before_seconds": 0.1011062369980209,
+  "stop_reason": null,
+  "collection_errors": [],
+  "browser_exit": 0,
+  "query": {
+    "1h": {
+      "p50": 7.067368998832535,
+      "p95": 245.52546799895936,
+      "p99": 1642.2687609992863,
+      "requests": 540,
+      "errors": 0
+    },
+    "7d": {
+      "p50": 13.514484999177512,
+      "p95": 191.53655099944444,
+      "p99": 1625.7163049995143,
+      "requests": 548,
+      "errors": 0
+    },
+    "365d": {
+      "p50": 96.29304400004912,
+      "p95": 746.1962849993142,
+      "p99": 1724.3204940023134,
+      "requests": 543,
+      "errors": 0
+    }
+  },
+  "status": "FAIL",
+  "browser_p95": 964.8000000007451,
+  "browser_errors": 0,
+  "browser_requests": 1339,
+  "visibility_lag_p95_upper_bound": 9.243130683898926,
+  "visibility_probe_count": 174,
+  "measured_seconds": 177.7969114780426,
+  "accepted_rate": 244.66116783683344,
+  "committed_rate": 244.66116783683344,
+  "queue_slope": 0.0,
+  "latest_sample_age_p95": 4.027459621429443,
+  "generator_lag_p95": 0.319,
+  "failures": [
+    "Committed rate below 99% offered",
+    "Accepted rate below 99% offered"
+  ],
+  "missing": [
+    "Less than 15 minutes measured",
+    "Query-API end-to-end visibility lag and complete resource health verification unavailable"
+  ],
+  "drain_after_seconds": 0.16224381500069285,
+  "final_committed": 74500,
+  "final_device_coverage": 250,
+  "final_accepted": 74500,
+  "final_failed": 0,
+  "acceptance_counter_limitation": "Counters are emitted after each completed tick; termination can leave an unlogged partial tick."
+}

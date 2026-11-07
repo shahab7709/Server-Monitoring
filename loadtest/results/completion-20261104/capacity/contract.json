@@ -1,0 +1,24 @@
+{
+  "devices": "2000,3000,5000,7500,10000",
+  "seconds": 0,
+  "warmup": 120,
+  "sample_seconds": 5,
+  "api": "http://127.0.0.1:28081",
+  "project": "sm-benchmark-completion-20261104-capacity",
+  "simulator": "/tmp/server-monitoring-simulator-next",
+  "out": "/home/shahab/projects/test/Server-Monitoring/loadtest/results/completion-20261104/capacity",
+  "skip_history": false,
+  "resource_thresholds": {
+    "disk_free_min_gib": 10,
+    "queue_storage_max_mib": 768,
+    "queue_max_messages": 500,
+    "queue_persistent_messages": 100,
+    "persistent_seconds": 60,
+    "available_memory_min_mib": 512,
+    "host_cpu_max_percent": 95,
+    "disk_busy_max_percent": 95,
+    "generator_lag_max_seconds": 10
+  },
+  "queue_transient_allowance_messages": 2,
+  "visibility_probe": "One device through chart API every five seconds; upper-bound p95 < 10 seconds"
+}

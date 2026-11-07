@@ -1,6 +1,8 @@
 # ADR-0001: TimescaleDB for initial time-series storage
 Status: Accepted for initial implementation; benchmark-gated.
 
+Implementation update: [ADR-0007](0007-transactional-rollups.md) supersedes the continuous-aggregate choice below; current minute/hour rollups are ordinary hypertables updated transactionally.
+
 ## Context
 Need one-second samples, idempotent writes, time-window reads and pre-aggregated one-year visualization. Early scale 1,000 devices and a small team.
 ## Decision

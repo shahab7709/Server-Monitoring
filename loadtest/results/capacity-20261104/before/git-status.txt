@@ -1,0 +1,7 @@
+ M cmd/simulator/main.go
+?? loadtest/__pycache__/
+?? loadtest/browser_benchmark.cjs
+?? loadtest/capacity_benchmark.py
+?? loadtest/compose.benchmark.yaml
+?? loadtest/plot_capacity.py
+?? loadtest/results/

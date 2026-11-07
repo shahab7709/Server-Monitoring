@@ -1,0 +1,39 @@
+name: server-monitoring-benchmark
+services:
+  db:
+    image: timescale/timescaledb:2.17.2-pg16
+    environment:
+      POSTGRES_USER: monitor
+      POSTGRES_PASSWORD: monitor
+      POSTGRES_DB: monitor
+    volumes: [benchmark-db:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U monitor -d monitor']
+      interval: 3s
+      retries: 30
+  nats:
+    image: nats:2.10-alpine
+    command: [-js, -sd, /data, -m, '8222']
+    volumes: [benchmark-nats:/data]
+    healthcheck:
+      test: [CMD, wget, -T, '3', -qO-, 'http://127.0.0.1:8222/healthz']
+      interval: 5s
+      retries: 10
+  api:
+    image: server-monitoring-api:latest
+    environment: &app-env
+      DATABASE_URL: postgres://monitor:monitor@db:5432/monitor?sslmode=disable
+      NATS_URL: nats://nats:4222
+    ports: ['127.0.0.1:28081:8080']
+    depends_on:
+      db: {condition: service_healthy}
+      nats: {condition: service_healthy}
+  worker:
+    image: server-monitoring-worker:latest
+    environment: *app-env
+    depends_on:
+      db: {condition: service_healthy}
+      nats: {condition: service_healthy}
+volumes:
+  benchmark-db:
+  benchmark-nats:

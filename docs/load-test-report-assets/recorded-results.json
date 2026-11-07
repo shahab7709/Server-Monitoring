@@ -1,0 +1,498 @@
+[
+  {
+    "label": "00-50",
+    "devices": 50,
+    "offered": 50,
+    "warmup": 120,
+    "seconds": 300,
+    "drain_before_seconds": 0.08856732600179384,
+    "stop_reason": null,
+    "collection_errors": [],
+    "browser_exit": 0,
+    "query": {
+      "1h": {
+        "p50": 6.121070000517648,
+        "p95": 18.741255000350066,
+        "p99": 49.89099399972474,
+        "requests": 579,
+        "errors": 0
+      },
+      "7d": {
+        "p50": 11.293007999483962,
+        "p95": 29.191460002039094,
+        "p99": 80.84333800070453,
+        "requests": 577,
+        "errors": 0
+      },
+      "365d": {
+        "p50": 79.33603799756384,
+        "p95": 161.42988800129388,
+        "p99": 233.85658800179954,
+        "requests": 580,
+        "errors": 0
+      }
+    },
+    "status": "INCONCLUSIVE",
+    "browser_p95": 242.5,
+    "browser_errors": 0,
+    "browser_requests": 1577,
+    "visibility_lag_p95_upper_bound": 7.3037073612213135,
+    "visibility_probe_count": 175,
+    "measured_seconds": 175.5588607788086,
+    "accepted_rate": 50.12563855200314,
+    "committed_rate": 49.84083378750312,
+    "queue_slope": 0.0,
+    "latest_sample_age_p95": 3.334887981414795,
+    "generator_lag_p95": 0.262,
+    "failures": [],
+    "missing": [
+      "Less than 15 minutes measured",
+      "Query-API end-to-end visibility lag and complete resource health verification unavailable"
+    ],
+    "drain_after_seconds": 0.11394635000033304,
+    "final_committed": 15000,
+    "final_device_coverage": 50,
+    "final_accepted": 15000,
+    "final_failed": 0,
+    "acceptance_counter_limitation": "Counters are emitted after each completed tick; termination can leave an unlogged partial tick.",
+    "source": "loadtest/results/capacity-20261104/00-50",
+    "measurement_start": 1793793845.2334762,
+    "cpu_peak": {
+      "api": 45.69,
+      "worker": 0.81,
+      "db": 112.26,
+      "nats": 7.09,
+      "simulator": 0.4090354791104952
+    },
+    "ram_peak_mib": {
+      "api": 21.73,
+      "worker": 9.945,
+      "db": 462.8,
+      "nats": 22.95,
+      "simulator": 10.8671875
+    }
+  },
+  {
+    "label": "01-100",
+    "devices": 100,
+    "offered": 100,
+    "warmup": 120,
+    "seconds": 300,
+    "drain_before_seconds": 0.13736747700022534,
+    "stop_reason": null,
+    "collection_errors": [],
+    "browser_exit": 0,
+    "query": {
+      "1h": {
+        "p50": 6.471980999776861,
+        "p95": 21.1209270019026,
+        "p99": 74.5169399997394,
+        "requests": 574,
+        "errors": 0
+      },
+      "7d": {
+        "p50": 11.851213999761967,
+        "p95": 32.09720100130653,
+        "p99": 91.3868290008395,
+        "requests": 578,
+        "errors": 0
+      },
+      "365d": {
+        "p50": 81.05322800111026,
+        "p95": 189.0807500021765,
+        "p99": 286.2862270012556,
+        "requests": 577,
+        "errors": 0
+      }
+    },
+    "status": "INCONCLUSIVE",
+    "browser_p95": 258.8999999985099,
+    "browser_errors": 0,
+    "browser_requests": 1574,
+    "visibility_lag_p95_upper_bound": 7.009509801864624,
+    "visibility_probe_count": 175,
+    "measured_seconds": 175.15345430374146,
+    "accepted_rate": 99.91238865122503,
+    "committed_rate": 99.91238865122503,
+    "queue_slope": 0.0,
+    "latest_sample_age_p95": 3.1740567684173584,
+    "generator_lag_p95": 0.114,
+    "failures": [],
+    "missing": [
+      "Less than 15 minutes measured",
+      "Query-API end-to-end visibility lag and complete resource health verification unavailable"
+    ],
+    "drain_after_seconds": 0.1284117730028811,
+    "final_committed": 30000,
+    "final_device_coverage": 100,
+    "final_accepted": 30000,
+    "final_failed": 0,
+    "acceptance_counter_limitation": "Counters are emitted after each completed tick; termination can leave an unlogged partial tick.",
+    "source": "loadtest/results/capacity-20261104/01-100",
+    "measurement_start": 1793794148.078056,
+    "cpu_peak": {
+      "api": 43.74,
+      "worker": 1.15,
+      "db": 141.33,
+      "nats": 3.75,
+      "simulator": 0.41713177450002886
+    },
+    "ram_peak_mib": {
+      "api": 22.61,
+      "worker": 9.184,
+      "db": 468.9,
+      "nats": 41.2,
+      "simulator": 10.39453125
+    }
+  },
+  {
+    "label": "02-250",
+    "devices": 250,
+    "offered": 250,
+    "warmup": 120,
+    "seconds": 300,
+    "drain_before_seconds": 0.1011062369980209,
+    "stop_reason": null,
+    "collection_errors": [],
+    "browser_exit": 0,
+    "query": {
+      "1h": {
+        "p50": 7.067368998832535,
+        "p95": 245.52546799895936,
+        "p99": 1642.2687609992863,
+        "requests": 540,
+        "errors": 0
+      },
+      "7d": {
+        "p50": 13.514484999177512,
+        "p95": 191.53655099944444,
+        "p99": 1625.7163049995143,
+        "requests": 548,
+        "errors": 0
+      },
+      "365d": {
+        "p50": 96.29304400004912,
+        "p95": 746.1962849993142,
+        "p99": 1724.3204940023134,
+        "requests": 543,
+        "errors": 0
+      }
+    },
+    "status": "FAIL",
+    "browser_p95": 964.8000000007451,
+    "browser_errors": 0,
+    "browser_requests": 1339,
+    "visibility_lag_p95_upper_bound": 9.243130683898926,
+    "visibility_probe_count": 174,
+    "measured_seconds": 177.7969114780426,
+    "accepted_rate": 244.66116783683344,
+    "committed_rate": 244.66116783683344,
+    "queue_slope": 0.0,
+    "latest_sample_age_p95": 4.027459621429443,
+    "generator_lag_p95": 0.319,
+    "failures": [
+      "Committed rate below 99% offered",
+      "Accepted rate below 99% offered"
+    ],
+    "missing": [
+      "Less than 15 minutes measured",
+      "Query-API end-to-end visibility lag and complete resource health verification unavailable"
+    ],
+    "drain_after_seconds": 0.16224381500069285,
+    "final_committed": 74500,
+    "final_device_coverage": 250,
+    "final_accepted": 74500,
+    "final_failed": 0,
+    "acceptance_counter_limitation": "Counters are emitted after each completed tick; termination can leave an unlogged partial tick.",
+    "source": "loadtest/results/capacity-20261104/02-250",
+    "measurement_start": 1793794451.1573675,
+    "cpu_peak": {
+      "api": 48.88,
+      "worker": 8.42,
+      "db": 195.74,
+      "nats": 3.91,
+      "simulator": 1.240694651088647
+    },
+    "ram_peak_mib": {
+      "api": 44.31,
+      "worker": 10.7,
+      "db": 504.5,
+      "nats": 43.41,
+      "simulator": 10.703125
+    }
+  },
+  {
+    "label": "03-500",
+    "devices": 500,
+    "offered": 500,
+    "warmup": 120,
+    "seconds": 300,
+    "drain_before_seconds": 0.15542864899907727,
+    "stop_reason": null,
+    "collection_errors": [],
+    "browser_exit": 0,
+    "query": {
+      "1h": {
+        "p50": 7.018336000328418,
+        "p95": 37.37788400030695,
+        "p99": 135.52671800061944,
+        "requests": 568,
+        "errors": 0
+      },
+      "7d": {
+        "p50": 13.82348300103331,
+        "p95": 57.08333599977777,
+        "p99": 165.4684040004213,
+        "requests": 571,
+        "errors": 0
+      },
+      "365d": {
+        "p50": 87.32656199936173,
+        "p95": 315.8274060006079,
+        "p99": 510.9905900026206,
+        "requests": 570,
+        "errors": 0
+      }
+    },
+    "status": "INCONCLUSIVE",
+    "browser_p95": 365.30000000074506,
+    "browser_errors": 0,
+    "browser_requests": 1534,
+    "visibility_lag_p95_upper_bound": 7.161789655685425,
+    "visibility_probe_count": 175,
+    "measured_seconds": 175.3973138332367,
+    "accepted_rate": 501.7180598539164,
+    "committed_rate": 498.86738905929184,
+    "queue_slope": 0.0,
+    "latest_sample_age_p95": 3.3840041160583496,
+    "generator_lag_p95": 0.198,
+    "failures": [],
+    "missing": [
+      "Less than 15 minutes measured",
+      "Query-API end-to-end visibility lag and complete resource health verification unavailable"
+    ],
+    "drain_after_seconds": 0.09110409999993863,
+    "final_committed": 150000,
+    "final_device_coverage": 500,
+    "final_accepted": 150000,
+    "final_failed": 0,
+    "acceptance_counter_limitation": "Counters are emitted after each completed tick; termination can leave an unlogged partial tick.",
+    "source": "loadtest/results/capacity-20261104/03-500",
+    "measurement_start": 1793794755.1142037,
+    "cpu_peak": {
+      "api": 61.85,
+      "worker": 4.99,
+      "db": 156.68,
+      "nats": 4.18,
+      "simulator": 0.610262758196471
+    },
+    "ram_peak_mib": {
+      "api": 26.8,
+      "worker": 10.17,
+      "db": 524.2,
+      "nats": 47.67,
+      "simulator": 11.1875
+    }
+  },
+  {
+    "label": "04-1000",
+    "devices": 1000,
+    "offered": 1000,
+    "warmup": 120,
+    "seconds": 1020,
+    "drain_before_seconds": 0.09935913300068933,
+    "stop_reason": null,
+    "collection_errors": [],
+    "browser_exit": 0,
+    "query": {
+      "1h": {
+        "p50": 6.382249997841427,
+        "p95": 13.417874000879237,
+        "p99": 29.579714999272255,
+        "requests": 2891,
+        "errors": 0
+      },
+      "7d": {
+        "p50": 12.26849799786578,
+        "p95": 25.42518800328253,
+        "p99": 45.60047199993278,
+        "requests": 2892,
+        "errors": 0
+      },
+      "365d": {
+        "p50": 82.49256899944157,
+        "p95": 142.6049290021183,
+        "p99": 222.511415999179,
+        "requests": 2891,
+        "errors": 0
+      }
+    },
+    "status": "INCONCLUSIVE",
+    "browser_p95": 214.69999999925494,
+    "browser_errors": 0,
+    "browser_requests": 7840,
+    "visibility_lag_p95_upper_bound": 7.6329569816589355,
+    "visibility_probe_count": 895,
+    "measured_seconds": 895.5709252357483,
+    "accepted_rate": 1000.4791075191937,
+    "committed_rate": 999.3625013724089,
+    "queue_slope": 0.0,
+    "latest_sample_age_p95": 3.7018074989318848,
+    "generator_lag_p95": 0.479,
+    "failures": [],
+    "missing": [
+      "Less than 15 minutes measured",
+      "Query-API end-to-end visibility lag and complete resource health verification unavailable"
+    ],
+    "drain_after_seconds": 0.09639296399836894,
+    "final_committed": 1020000,
+    "final_device_coverage": 1000,
+    "final_accepted": 1020000,
+    "final_failed": 0,
+    "acceptance_counter_limitation": "Counters are emitted after each completed tick; termination can leave an unlogged partial tick.",
+    "source": "loadtest/results/capacity-20261104/04-1000",
+    "measurement_start": 1793795058.4509723,
+    "cpu_peak": {
+      "api": 52.0,
+      "worker": 10.86,
+      "db": 217.45,
+      "nats": 8.5,
+      "simulator": 1.033044180742536
+    },
+    "ram_peak_mib": {
+      "api": 26.94,
+      "worker": 11.24,
+      "db": 801.8,
+      "nats": 59.5,
+      "simulator": 11.609375
+    }
+  },
+  {
+    "label": "00-2000",
+    "devices": 2000,
+    "offered": 2000,
+    "warmup": 120,
+    "seconds": 1030,
+    "drain_before_seconds": 0.07222451800043928,
+    "stop_reason": null,
+    "collection_errors": [],
+    "browser_exit": 0,
+    "generator_exit": 0,
+    "query": {
+      "1h": {
+        "p50": 15.860388000874082,
+        "p95": 38.655531003314536,
+        "p99": 76.73083000190672,
+        "requests": 2899,
+        "errors": 0
+      },
+      "7d": {
+        "p50": 13.128252998285461,
+        "p95": 30.713283002114622,
+        "p99": 53.43526800061227,
+        "requests": 2900,
+        "errors": 0
+      },
+      "365d": {
+        "p50": 92.81599300084054,
+        "p95": 160.68568300033803,
+        "p99": 238.1676900004095,
+        "requests": 2899,
+        "errors": 0
+      }
+    },
+    "status": "PASS",
+    "browser_p95": 245,
+    "browser_errors": 0,
+    "browser_requests": 7789,
+    "visibility_lag_p95_upper_bound": 8.558529376983643,
+    "visibility_probe_count": 905,
+    "measured_seconds": 905.6261761188507,
+    "accepted_rate": 2000.0349681433327,
+    "committed_rate": 1997.2998244536277,
+    "queue_slope": -0.0010057566850103184,
+    "queue_start_median": 2.0,
+    "queue_end_median": 0.0,
+    "latest_sample_age_p95": 3.8267767429351807,
+    "generator_lag_p95": 0.605,
+    "visibility_probe_method": "Last device in each generated tick, timestamp-to-chart-API visibility, polled every five seconds; conservative upper bound including polling delay.",
+    "failures": [],
+    "missing": [],
+    "drain_after_seconds": 0.08730473000105121,
+    "final_committed": 2060000,
+    "final_device_coverage": 2000,
+    "final_accepted": 2060000,
+    "final_failed": 0,
+    "ingestion_error_rate": 0.0,
+    "acceptance_counter_limitation": "Counters are emitted after each completed tick; termination can leave an unlogged partial tick.",
+    "source": "loadtest/results/completion-20261104/capacity/00-2000",
+    "measurement_start": 1793797307.546782,
+    "cpu_peak": {
+      "api": 60.57,
+      "worker": 23.23,
+      "db": 269.33,
+      "nats": 8.52,
+      "simulator": 1.7917711802632952
+    },
+    "ram_peak_mib": {
+      "api": 31.45,
+      "worker": 10.03,
+      "db": 1095.68,
+      "nats": 69.12,
+      "simulator": 11.82421875
+    },
+    "host_cpu_peak": 77.40126767430522,
+    "host_cpu_avg": 47.64418716243633
+  },
+  {
+    "label": "01-3000",
+    "devices": 3000,
+    "offered": 3000,
+    "warmup": 120,
+    "measured_seconds": 450.2353684902191,
+    "accepted_rate": 2999.9209265888544,
+    "committed_rate": 2984.9272824564464,
+    "browser_p95": 382,
+    "browser_requests": 3679,
+    "browser_errors": 0,
+    "status": "INCONCLUSIVE",
+    "source": "loadtest/results/completion-20261104/capacity/01-3000",
+    "query": {
+      "1h": {
+        "p50": null,
+        "p95": null,
+        "p99": null
+      },
+      "7d": {
+        "p50": null,
+        "p95": null,
+        "p99": null
+      },
+      "365d": {
+        "p50": null,
+        "p95": null,
+        "p99": null
+      }
+    },
+    "pending_start": 6,
+    "pending_end": 18,
+    "reason": "Interrupted at user request; no complete 15-minute window; HTTP query samples were not persisted on interruption.",
+    "measurement_start": 1793798340.5326898,
+    "cpu_peak": {
+      "api": 68.31,
+      "worker": 28.17,
+      "db": 413.59,
+      "nats": 9.36,
+      "simulator": 2.7425244117236054
+    },
+    "ram_peak_mib": {
+      "api": 31.36,
+      "worker": 9.715,
+      "db": 1536.0,
+      "nats": 80.19,
+      "simulator": 11.7734375
+    },
+    "host_cpu_peak": 83.61261705273535,
+    "host_cpu_avg": 58.76889937316906
+  }
+]

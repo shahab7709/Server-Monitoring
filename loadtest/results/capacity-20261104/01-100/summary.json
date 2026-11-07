@@ -1,0 +1,57 @@
+{
+  "label": "01-100",
+  "devices": 100,
+  "offered": 100,
+  "warmup": 120,
+  "seconds": 300,
+  "drain_before_seconds": 0.13736747700022534,
+  "stop_reason": null,
+  "collection_errors": [],
+  "browser_exit": 0,
+  "query": {
+    "1h": {
+      "p50": 6.471980999776861,
+      "p95": 21.1209270019026,
+      "p99": 74.5169399997394,
+      "requests": 574,
+      "errors": 0
+    },
+    "7d": {
+      "p50": 11.851213999761967,
+      "p95": 32.09720100130653,
+      "p99": 91.3868290008395,
+      "requests": 578,
+      "errors": 0
+    },
+    "365d": {
+      "p50": 81.05322800111026,
+      "p95": 189.0807500021765,
+      "p99": 286.2862270012556,
+      "requests": 577,
+      "errors": 0
+    }
+  },
+  "status": "INCONCLUSIVE",
+  "browser_p95": 258.8999999985099,
+  "browser_errors": 0,
+  "browser_requests": 1574,
+  "visibility_lag_p95_upper_bound": 7.009509801864624,
+  "visibility_probe_count": 175,
+  "measured_seconds": 175.15345430374146,
+  "accepted_rate": 99.91238865122503,
+  "committed_rate": 99.91238865122503,
+  "queue_slope": 0.0,
+  "latest_sample_age_p95": 3.1740567684173584,
+  "generator_lag_p95": 0.114,
+  "failures": [],
+  "missing": [
+    "Less than 15 minutes measured",
+    "Query-API end-to-end visibility lag and complete resource health verification unavailable"
+  ],
+  "drain_after_seconds": 0.1284117730028811,
+  "final_committed": 30000,
+  "final_device_coverage": 100,
+  "final_accepted": 30000,
+  "final_failed": 0,
+  "acceptance_counter_limitation": "Counters are emitted after each completed tick; termination can leave an unlogged partial tick."
+}

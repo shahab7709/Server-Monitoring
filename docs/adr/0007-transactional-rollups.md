@@ -9,3 +9,6 @@ In one transaction, `INSERT ... ON CONFLICT DO NOTHING RETURNING` obtains newly 
 
 ## Trade-offs
 A heavier write path and potential row lock hot spots on per-device/hour buckets, especially for large historical backfills. Optimizes consistency and explainability over maximum ingest throughput. Consider staging/COPY, bounded aggregation batches, asynchronous refresh, and/or analytical stores after benchmark evidence. First write wins for conflicting duplicate samples.
+
+## Idempotency horizon
+The implementation deduplicates against the raw primary key. Once raw retention deletes that key, replaying the expired sample can insert it again and increment surviving rollups. The replay guarantee therefore requires retained dedup keys or a controlled replay boundary; it is not an indefinite event ledger. A longer-horizon ledger/checkpoint scheme is a prerequisite for the migration described in [ADR-0017](0017-online-storage-migration.md).

@@ -1,0 +1,6 @@
+Go test ./...: PASS (2026-11-04 UTC)
+Simulator retry exhaustion / failure counters / graceful shutdown: PASS against local HTTP 503 fixture
+Python syntax checks: PASS
+Node browser script syntax: PASS
+Git diff whitespace check: PASS
+Separate Compose smoke tests: PASS; see capacity-smoke.log

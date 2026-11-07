@@ -1,6 +1,8 @@
 # ADR-0003: Multi-resolution rollups for long-range charts
 Status: Accepted.
 
+Implementation update: [ADR-0007](0007-transactional-rollups.md) replaces scheduled materialization with transactional rollups, including current buckets; the current query path selects one tier and does not need a separate raw/materialization stitch.
+
 ## Context
 One sensor sampled every second produces ~31.5 million points in a year; browsers need ~1k–2k visible buckets.
 ## Decision

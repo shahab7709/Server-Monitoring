@@ -1,0 +1,1 @@
+Initial runner interrupted during transition to completed instrumentation. This interval is incomplete and has no per-step summary; exclude it from capacity claims and aggregate charts. Raw counters, resources and browser observations are preserved.

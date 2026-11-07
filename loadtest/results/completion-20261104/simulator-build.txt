@@ -1,0 +1,14 @@
+/tmp/server-monitoring-simulator-next: go1.24.5
+	path	example.com/server-monitoring/cmd/simulator
+	mod	example.com/server-monitoring	v0.0.0-20261104105706-6e2f61341754+dirty	
+	build	-buildmode=exe
+	build	-compiler=gc
+	build	DefaultGODEBUG=gotestjsonbuildtext=1,multipathtcp=0,randseednop=0,rsa1024min=0,tlsmlkem=0,x509rsacrt=0,x509usepolicies=0
+	build	CGO_ENABLED=0
+	build	GOARCH=amd64
+	build	GOOS=linux
+	build	GOAMD64=v1
+	build	vcs=git
+	build	vcs.revision=6e2f6134175454fc87e47f5fb5ee4ef1ea1fff20
+	build	vcs.time=2026-11-04T10:57:06Z
+	build	vcs.modified=true

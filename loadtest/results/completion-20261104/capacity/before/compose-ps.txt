@@ -1,0 +1,5 @@
+NAME                                                 IMAGE                               COMMAND                  SERVICE   CREATED          STATUS                   PORTS
+sm-benchmark-completion-20261104-capacity-api-1      server-monitoring-api:latest        "/app"                   api       10 seconds ago   Up 3 seconds             127.0.0.1:28081->8080/tcp
+sm-benchmark-completion-20261104-capacity-db-1       timescale/timescaledb:2.17.2-pg16   "docker-entrypoint.s…"   db        10 seconds ago   Up 9 seconds (healthy)   5432/tcp
+sm-benchmark-completion-20261104-capacity-nats-1     nats:2.10-alpine                    "docker-entrypoint.s…"   nats      10 seconds ago   Up 9 seconds (healthy)   4222/tcp, 6222/tcp, 8222/tcp
+sm-benchmark-completion-20261104-capacity-worker-1   server-monitoring-worker:latest     "/app"                   worker    10 seconds ago   Up 3 seconds             
